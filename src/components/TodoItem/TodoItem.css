@@ -1,0 +1,17 @@
+.item-el {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.icon-operation {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.item-done {
+  text-decoration: line-through;
+}

@@ -1,0 +1,25 @@
+.todo-list {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  border-bottom: 2px solid brown;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.item-todo {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.item-el {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
