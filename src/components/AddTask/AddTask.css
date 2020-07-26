@@ -1,8 +1,7 @@
-.new-task {
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
+.new-container {
+  max-width: 1200px;
 }
+
 .input-task {
   border-radius: 5px;
   min-height: 20px;
@@ -21,7 +20,7 @@
 }
 
 .plus {
-  fill: chocolate;
+  margin-right: 10px;
   font-size: 16px;
 }
 

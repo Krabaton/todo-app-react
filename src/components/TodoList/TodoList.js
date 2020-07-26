@@ -4,15 +4,15 @@ import { TodoItem } from '../'
 
 function TodoList({ items, deleteItem, checkedItem, updateItem }) {
   return (
-    <ul className="todo-list">
-      <li className="header item-todo" key={0}>
-        <div className="item-el">Id</div>
-        <div className="item-el">Title</div>
-        <div className="item-el">Operations</div>
+    <ul className="row">
+      <li className="header row col-md-12" key={0}>
+        <div className="col-md-3">Id</div>
+        <div className="col-md-6">Title</div>
+        <div className="col-md-3">Operations</div>
       </li>
       {items.map((item, index) => {
         return (
-          <li className="item-todo" key={item.id}>
+          <li className="row col-md-12" key={item.id}>
             <TodoItem
               title={item.title}
               id={item.id}

@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import './AddTask.css'
-import {
-  FaFolderPlus,
-  FaSpellCheck,
-  FaGetPocket,
-  FaCheckDouble,
-  FaSave,
-} from 'react-icons/fa'
+import { FaSave } from 'react-icons/fa'
 import { generate } from 'shortid'
+import Button from '../Button/button'
+import { FcAddDatabase, FcTodoList, FcAlarmClock, FcOk } from 'react-icons/fc'
 
 class AddTask extends Component {
   state = {
@@ -32,45 +28,62 @@ class AddTask extends Component {
   render() {
     const { task } = this.state
     const { view, setView, change, saveState } = this.props
-    const classIcon = 'icon'
+    const primaryClass = 'btn btn-success col-md-auto'
+    const secondaryClass = 'btn btn-secondary col-md-auto'
     return (
-      <div className="new-task">
-        <div>
+      <div className="mb-3">
+        <div className="input-group mb-3">
           <input
-            className="input-task"
+            className="form-control"
             type="text"
             value={task}
             onChange={this.changeTask}
             onKeyPress={this.onPressEnter}
           />
-          <button className="add-task" onClick={this.addNewTask}>
-            <FaFolderPlus className="plus" />
-          </button>
+
+          <Button
+            nameClass="btn btn-primary"
+            text="Добавить"
+            Icon={FcAddDatabase}
+            handler={this.addNewTask}></Button>
         </div>
-        <div className="icons">
-          <FaSpellCheck
-            className={classIcon + (view === 'all' ? ' active-icon' : '')}
-            onClick={() => {
+        <div className="row justify-content-around align-items-center">
+          <Button
+            nameClass={view === 'all' ? primaryClass : secondaryClass}
+            status={false}
+            text="Все задачи"
+            Icon={FcTodoList}
+            handler={() => {
+              saveState()
               setView('all')
-            }}
-          />
-          <FaGetPocket
-            className={classIcon + (view === 'active' ? ' active-icon' : '')}
-            onClick={() => {
+            }}></Button>
+          <Button
+            className="col"
+            nameClass={view === 'active' ? primaryClass : secondaryClass}
+            status={false}
+            text="Активные задачи"
+            Icon={FcAlarmClock}
+            handler={() => {
+              saveState()
               setView('active')
-            }}
-          />
-          <FaCheckDouble
-            className={classIcon + (view === 'completed' ? ' active-icon' : '')}
-            onClick={() => {
+            }}></Button>
+          <Button
+            className="col"
+            nameClass={view === 'completed' ? primaryClass : secondaryClass}
+            status={false}
+            text="Выполненые задачи"
+            Icon={FcOk}
+            handler={() => {
+              saveState()
               setView('completed')
-            }}
-          />
-          <FaSave
-            className="icon"
-            fill={change ? 'blue' : 'grey'}
-            onClick={saveState}
-          />
+            }}></Button>
+          <Button
+            className="col"
+            nameClass={primaryClass}
+            status={!change}
+            text="Сохранить"
+            Icon={FaSave}
+            handler={saveState}></Button>
         </div>
       </div>
     )
