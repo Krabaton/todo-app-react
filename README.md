@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # TODO APP
 
-Demo: [Demo](https://krabaton.github.io/todo-app-react/build)
+Demo: [Demo](https://krabaton.github.io/todo-app-react/build/index.html)
 
 ## Available Scripts
 
